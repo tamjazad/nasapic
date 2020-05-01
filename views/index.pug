@@ -3,7 +3,10 @@ extends layout
 block content
   h1=title
   h2=today_date
-  p Welcome to #{title}. This updates daily and can be accessed via NASA's APIs.
+  p This updates daily and its info can be accessed via NASA's #[a(href='https://api.nasa.gov') APIs].
   img(src=picture_url)
-  h3 Image Explained:
+  h3 Image Explanation
   p #{explanation}
+  p ~
+  p Site created by #[a(href='https://tamjazad.github.io') Tamjeed Azad] using NodeJS, ExpressJS, and PugJS.
+  a(href='https://apod.nasa.gov/apod/astropix.html') NASA's Original APOD Site

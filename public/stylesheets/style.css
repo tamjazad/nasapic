@@ -12,8 +12,10 @@ body {
 
 img {
   max-width: 100%;
+  border-radius: 15px;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
 }
