@@ -27,7 +27,7 @@ https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express',
+  res.render('index', { title: "NASA's Pic of the Day",
   picture_url: image_url, explanation: explained});
 });
 
