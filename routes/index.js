@@ -6,6 +6,8 @@ var https = require('https');
 var image_url;
 var explained;
 var current_date;
+var date_fields;
+var final_datestring;
 
 https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
   let data = '';
@@ -21,15 +23,16 @@ https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
     image_url = JSON.parse(data).url;
     explained = JSON.parse(data).explanation;
     current_date = JSON.parse(data).date;
-    console.log(current_date)
+    date_fields = current_date.split("-");
+    final_datestring = date_fields[1] + "/" + date_fields[2] + "/" + date_fields[0];
+    console.log(current_date.split("-"));
+    console.log(final_datestring);
   });
 
 }).on("error", (err) => {
   console.log("Error: " + err.message);
 });
 
-date_fields = current_date.split("-");
-final_datestring = 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -37,7 +40,7 @@ router.get('/', function(req, res, next) {
   title: "NASA's Pic of the Day",
   picture_url: image_url,
   explanation: explained,
-  today_date: current_date});
+  today_date: final_datestring});
 });
 
 module.exports = router;
