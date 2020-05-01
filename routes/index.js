@@ -28,6 +28,9 @@ https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
   console.log("Error: " + err.message);
 });
 
+date_fields = current_date.split("-");
+final_datestring = 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
