@@ -9,6 +9,8 @@ var current_date;
 var date_fields;
 var final_datestring;
 
+// GET request code modified from code from a twilio blog post
+// link: https://www.twilio.com/blog/2017/08/http-requests-in-node-js.html
 https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
   let data = '';
 
